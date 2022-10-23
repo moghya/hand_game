@@ -3,7 +3,7 @@ ARG GCC_VERSION=10
 FROM --platform=linux/amd64 gcc:$GCC_VERSION
 
 # renovate: datasource=github-releases depName=Kitware/CMake
-ARG CMAKE_VERSION=3.21.0
+ARG CMAKE_VERSION=3.23.0
 
 RUN wget https://github.com/Kitware/CMake/releases/download/v${CMAKE_VERSION}/cmake-${CMAKE_VERSION}-Linux-x86_64.sh \
       -q -O /tmp/cmake-install.sh \
@@ -13,3 +13,9 @@ RUN wget https://github.com/Kitware/CMake/releases/download/v${CMAKE_VERSION}/cm
       && rm /tmp/cmake-install.sh
 
 ENV PATH="/usr/bin/cmake/bin:${PATH}"
+RUN mkdir /home/rps_game
+COPY . /home/rps_game
+WORKDIR /home/rps_game
+RUN cmake .
+RUN make rps_game
+CMD ["bash"]
