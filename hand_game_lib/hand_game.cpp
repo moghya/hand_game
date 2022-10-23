@@ -33,6 +33,13 @@ namespace moghya {
     }
 
     HandGame::PlayerHandMap HandGame::GetPlayerHands() {
+        std::stringstream ruleDescStream;
+        ruleDescStream << "\nHand Rules: \n";
+        for(auto rule : rules)
+            ruleDescStream << "\t" << rule->Description() << "\n";
+        std::string ruleDescMsg = ruleDescStream.str();
+        for(auto p: players) p->SendMessage(ruleDescMsg);
+
         std::stringstream playerHandsStream;
         PlayerHandMap  playerHandMap;
         auto it = players.begin();

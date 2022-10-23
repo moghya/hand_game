@@ -5,6 +5,7 @@
 #ifndef RPS_GAME_HAND_GAME_H
 #define RPS_GAME_HAND_GAME_H
 
+#include <functional>
 #include <map>
 #include <set>
 

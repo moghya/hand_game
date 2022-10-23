@@ -2,6 +2,8 @@
 // Created by Shubham Sawant on 23/10/22.
 //
 
+#include <cstdlib>
+#include <ctime>
 #include "auto_player_interactor.h"
 
 namespace imc {

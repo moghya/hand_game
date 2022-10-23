@@ -11,9 +11,8 @@
 
 namespace imc {
     RockPaperScissorsHandGame::RockPaperScissorsHandGame(
-            std::string name, int numberOfGames) :
+            std::string name, uint numberOfGames) :
         numberOfGames(numberOfGames) {
-        assert(numberOfGames > 0);
         auto interactor = std::make_shared<moghya::Interactor>();
         auto autoInteractor = std::make_shared<imc::AutoPlayerInteractor>();
         players.insert(std::make_shared<moghya::Player>(name, interactor));

@@ -19,7 +19,7 @@ namespace imc {
     class RockPaperScissorsHandGame {
         public:
             RockPaperScissorsHandGame(std::string name,
-                                      int numberOfGames);
+                                      uint numberOfGames);
             ~RockPaperScissorsHandGame();
             void Start();
         private:

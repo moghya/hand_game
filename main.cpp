@@ -7,8 +7,10 @@ int main() {
     uint numberOfRounds;
     std::cout << "Enter name of player: ";
     std::cin >> playerName;
-    std::cout << "\nEnter number of rounds: ";
-    std::cin >> numberOfRounds;
+    do {
+        std::cout << "\nEnter number of rounds: ";
+        std::cin >> numberOfRounds;
+    } while(numberOfRounds < 0);
     auto game = imc::RockPaperScissorsHandGame(playerName, numberOfRounds);
     game.Start();
     return 0;
